@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace ScriptFUSION\Steam250\Shared\Log;
+namespace ScriptFUSION\Steam250\Log;
 
 use ScriptFUSION\Async\Throttle\Throttle;
 
