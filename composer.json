@@ -9,7 +9,7 @@
     ],
     "require": {
         "php": "^7.3",
-        "async/throttle": "^2",
+        "async/throttle": "^2|^3",
         "monolog/monolog": "^1"
     },
     "autoload": {
