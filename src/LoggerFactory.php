@@ -10,13 +10,15 @@ use Psr\Log\LoggerInterface;
 
 final class LoggerFactory
 {
+    public const FORMAT = "[%datetime%] %level_name%: %message%\n";
+
     public function create(string $name, bool $verbose): LoggerInterface
     {
         return new Logger(
             $name,
             [
-                (new StreamHandler(STDERR, $verbose ? Logger::DEBUG : Logger::INFO))
-                    ->setFormatter(new LineFormatter("[%datetime%] %level_name%: %message%\n")),
+                (new StreamHandler(STDOUT, $verbose ? Logger::DEBUG : Logger::INFO))
+                    ->setFormatter(new LineFormatter(self::FORMAT)),
             ],
             [
                 new ShortLevelNameProcessor,
