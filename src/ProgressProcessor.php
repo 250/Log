@@ -11,7 +11,7 @@ final class ProgressProcessor
         $total = $record['context']['total'] ?? null;
 
         if (isset($count, $total)) {
-            $percent = ($count / $total) * 100 | 0;
+            $percent = (int)($count / $total * 100);
 
             $record['message'] = "$count/$total ($percent%) $record[message]";
         }
