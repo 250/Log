@@ -7,9 +7,10 @@
             "email": "bilge@scriptfusion.com"
         }
     ],
+    "minimum-stability": "beta",
     "require": {
-        "php": ">=7.3",
-        "async/throttle": "^3.1",
+        "php": "^8.1",
+        "async/throttle": "^4",
         "monolog/monolog": "^1.7|^2"
     },
     "autoload": {
