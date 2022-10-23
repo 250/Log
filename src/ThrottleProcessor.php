@@ -13,7 +13,7 @@ final class ThrottleProcessor
         $throttle = $record['context']['throttle'] ?? null;
 
         if ($throttle instanceof Throttle) {
-            $record['message'] .= " AR: {$throttle->countWatched()}";
+            $record['message'] .= " AR: {$throttle->countPending()}";
 
             if ($throttle instanceof DualThrottle) {
                 $record['message'] .= " {$throttle->measureThroughput()}/s";
