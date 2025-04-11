@@ -11,7 +11,7 @@
     "require": {
         "php": "^8.1",
         "async/throttle": "^4",
-        "monolog/monolog": "^1.7|^2"
+        "monolog/monolog": "^3"
     },
     "autoload": {
         "psr-4": {

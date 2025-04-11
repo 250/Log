@@ -3,10 +3,13 @@ declare(strict_types=1);
 
 namespace ScriptFUSION\Steam250\Log;
 
+use Monolog\LogRecord;
+use Monolog\Processor\ProcessorInterface;
+
 /**
  * Translates all log levels into exactly four characters.
  */
-final class ShortLevelNameProcessor
+final class ShortLevelNameProcessor implements ProcessorInterface
 {
     private const LEVELS = [
         'DEBUG'     => 'dbug',
@@ -19,9 +22,9 @@ final class ShortLevelNameProcessor
         'EMERGENCY' => 'EMRG',
     ];
 
-    public function __invoke(array $record): array
+    public function __invoke(LogRecord $record): LogRecord
     {
-        $record['level_name'] = self::LEVELS[$record['level_name']];
+        $record->extra['level_name'] = self::LEVELS[$record['level_name']];
 
         return $record;
     }
